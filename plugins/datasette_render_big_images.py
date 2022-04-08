@@ -18,7 +18,5 @@ def render_cell(value):
         return None
     # Render as a data-uri
     return jinja2.Markup(
-        '<img src="data:image/{};base64,{}">'.format(
-            image_type, base64.b64encode(value).decode("utf8")
-        )
+        f'<img src="data:image/{image_type};base64,{base64.b64encode(value).decode("utf8")}">'
     )
